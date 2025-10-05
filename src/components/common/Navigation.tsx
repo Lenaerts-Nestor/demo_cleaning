@@ -14,14 +14,12 @@ export default function Navigation({
     { label: "Home", section: "home" },
     { label: "About Us", section: "about" },
     { label: "Services", section: "services" },
-    { label: "Gallery", section: "gallery" },
-    { label: "Get a Quote", section: "quote" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <div
             className="flex items-center cursor-pointer logo-container gap-3"
@@ -30,7 +28,7 @@ export default function Navigation({
             <img
               src={logo}
               alt="Nim Cleaning Logo"
-              className="h-12 w-12 sm:h-14 sm:w-14 object-cover rounded-lg mix-blend-multiply"
+              className="h-16 w-16 sm:h-20 sm:w-20 object-cover rounded-lg mix-blend-multiply"
             />
             <div className="hidden sm:block">
               <h1 className="text-xl sm:text-2xl font-bold text-blue-600 leading-tight">
@@ -43,12 +41,12 @@ export default function Navigation({
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-5">
             {navItems.map((item) => (
               <button
                 key={item.section}
                 onClick={() => onNavigate(item.section)}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   activeSection === item.section
                     ? "text-blue-600 border-b-2 border-blue-600"
                     : "text-gray-700 hover:text-blue-600"
@@ -71,7 +69,7 @@ export default function Navigation({
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
             >
               <svg
-                className="h-6 w-6"
+                className="h-8 w-8"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -83,26 +81,6 @@ export default function Navigation({
               </svg>
             </button>
           </div>
-        </div>
-
-        {/* Mobile Menu */}
-        <div id="mobile-menu" className="hidden md:hidden pb-4">
-          {navItems.map((item) => (
-            <button
-              key={item.section}
-              onClick={() => {
-                onNavigate(item.section);
-                document.getElementById("mobile-menu")?.classList.add("hidden");
-              }}
-              className={`block w-full text-left px-3 py-2 text-base font-medium ${
-                activeSection === item.section
-                  ? "text-blue-600 bg-blue-50"
-                  : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
         </div>
       </div>
     </nav>

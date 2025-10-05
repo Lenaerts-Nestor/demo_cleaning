@@ -5,7 +5,6 @@ import Footer from "./components/common/Footer";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Services from "./components/sections/Services";
-import Quote from "./components/sections/Quote";
 import Gallery from "./components/sections/Gallery";
 import "./App.css";
 
@@ -79,8 +78,6 @@ function App() {
         <Hero onNavigate={handleNavigate} />
         <About />
         <Services />
-        <Gallery />
-        <Quote />
       </main>
 
       <Footer />
