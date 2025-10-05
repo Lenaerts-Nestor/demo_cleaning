@@ -7,7 +7,7 @@ interface HeroProps {
   onNavigate: (section: PageSection) => void;
 }
 
-export default function Hero({ onNavigate }: HeroProps) {
+export default function Hero({}: HeroProps) {
   const stats = [
     { value: "2+", label: "Jaren Ervaring" },
     { value: "500+", label: "Tevreden Klanten" },
@@ -58,24 +58,6 @@ export default function Hero({ onNavigate }: HeroProps) {
                 autoPlayInterval={3500}
               />
             </div>
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700"
-              onClick={() => onNavigate("gallery")}
-            >
-              Bekijk volledige galerij
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>
